@@ -3,9 +3,8 @@ def safe_print_list_integers(my_list=[], x=0):
     count = 0
     try:
         for i in range(x):
-            element =  my_list[i]
-            if type(element) == int:
-                print("{:d}".format(element), end="")
+            if type(my_list[i]) == int:
+                print("{:d}".format(my_list[i]), end="")
                 count += 1
         print()
         return (count)
