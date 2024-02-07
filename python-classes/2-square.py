@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""Square that based on 1-square.py
+"""
+
 
 class Square:
-
     def __init__(self, size=0):
         """Initialize a new Square instance with a given size.
 
