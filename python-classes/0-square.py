@@ -1,9 +1,18 @@
 #!/usr/bin/python3
-"""empty class Square
+"""
+This module defines an empty class Square.
 
-Defines a square
-
+The Square class represents a geometric square.
 """
 
 class Square:
+    """
+    This class defines a square.
+
+    Attributes:
+        None.
+
+    Methods:
+        None.
+    """
     pass
