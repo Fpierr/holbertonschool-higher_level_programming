@@ -4,6 +4,7 @@
 
 
 class Square:
+
     def __init__(self, size=0):
         """Initialize a new Square instance with a given size.
 
@@ -15,5 +16,6 @@ class Square:
             raise TypeError("size must be an integer")
         elif size < 0:
             raise ValueError("size must be >= 0")
+
         # Private attibut to store the size
         self.__size = size
