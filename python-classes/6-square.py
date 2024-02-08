@@ -68,11 +68,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """Calculate the area of the square
+        """Calculate the area of the square.
         """
 
         return (self.__size ** 2)
-    
+
     def my_print(self):
         """Print the square using '#' character.
         """
