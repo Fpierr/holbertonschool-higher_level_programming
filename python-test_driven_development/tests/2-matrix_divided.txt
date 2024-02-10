@@ -2,37 +2,65 @@
 
 matrix_divided = __import__('2-matrix_divided').matrix_divided
 
+# Normal cases
+
+# Case 1: Divide a matrix by a positive integer
 >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
+# Case 2: Divide a matrix by a positive float
 >>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 2)
 [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
 
+# Case 3: Divide a matrix by a positive integer
 >>> matrix_divided([[1, 2], [3, 4], [5, 6]], 2)
 [[0.5, 1.0], [1.5, 2.0], [2.5, 3.0]]
 
+
 # Edge cases
 
-# Matrix is not a list of lists
+# Case 4: Matrix is not a list of lists
 >>> matrix_divided([1, 2, 3], 2)
 Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Rows of the matrix are not of the same size
+# Case 5: Rows of the matrix are not of the same size
 >>> matrix_divided([[1, 2, 3], [4, 5], [6, 7, 8]], 2)
 Traceback (most recent call last):
     ...
 TypeError: Each row of the matrix must have the same size
 
-# Divisor is not a number
+# Case 6: Divisor is not a number
 >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 'two')
 Traceback (most recent call last):
     ...
 TypeError: div must be a number
 
-# Divisor is equal to zero
+# Case 7: Divisor is equal to zero
 >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
 Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
+
+# Additional cases
+
+# Case 8: Divide a matrix by a negative integer
+>>> matrix_divided([[3, 4, 5], [6, 7, 8]], -3)
+[[-1.0, -1.33, -1.67], [-2.0, -2.33, -2.67]]
+
+# Case 9: Divide a matrix by a negative float
+>>> matrix_divided([[2, 3], [4, 5]], -1.5)
+[[-1.33, -2.0], [-2.67, -3.33]]
+
+# Case 10: Divide a matrix by infinity
+>>> matrix_divided([[2, 3], [4, 5]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+# Case 11: Divide a matrix by negative infinity
+>>> matrix_divided([[2, 3], [4, 5]], float('-inf'))
+[[-0.0, -0.0], [-0.0, -0.0]]
+
+# Case 12: Divide a matrix by a negative integer
+>>> matrix_divided([[1, 2], [3, 4]], -2)
+[[-0.5, -1.0], [-1.5, -2.0]]
