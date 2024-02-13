@@ -6,4 +6,3 @@
 class BaseGeometry:
     """class creation"""
     pass
-
