@@ -11,6 +11,19 @@
 >>> print(my_list)
 [1, 4, 2, 3, 5]
 
+# Test issubclass
+>>> issubclass(MyList, list)
+True
+
+# Test isinstance
+>>> my_list = MyList()
+>>> isinstance(my_list, list)
+True
+
+# Test initial print_sorted method
+>>> my_list.print_sorted()
+[]  # Since the list is initially empty
+
 # Test print_sorted method
 >>> my_list.print_sorted()
 [1, 2, 3, 4, 5]
