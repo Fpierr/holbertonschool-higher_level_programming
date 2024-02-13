@@ -2,7 +2,7 @@
 """Empty class BaseGeometry."""
 
 
-
 class BaseGeometry:
     """class creation"""
+    
     pass
