@@ -3,7 +3,10 @@
 
 # Test area method (should raise an Exception)
 >>> bg = BaseGeometry()
->>> bg.area()
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
 [Exception] area() is not implemented
 
 # Test integer_validator method
@@ -24,6 +27,7 @@
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [ValueError] age must be greater than 0
 
+# Test integer_validator with a negative value
 >>> try:
 ...     bg.integer_validator("distance", -4)
 ... except Exception as e:
