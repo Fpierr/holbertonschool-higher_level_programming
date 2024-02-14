@@ -38,12 +38,11 @@
 >>> print(my_list)
 [1, 4, 2, 3, 5, 5, 1, 8, -2, 3]
 
-#check if print empty list
->>> my_list.print_sorted()
-[]
-
 #check if the element is a char
 >>> my_list.append(a)
 Traceback (most recent call last):
 ...
 NameError: name 'a' is not defined
+
+>>> my_list.print_sorted()
+[]
