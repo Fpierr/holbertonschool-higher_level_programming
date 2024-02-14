@@ -23,17 +23,23 @@
 >>> my_list.append(5)
 >>> my_list.append(1)
 >>> my_list.append(8)
->>> my_list.append(0)
+>>> my_list.append(-2)
 >>> my_list.append(3)
 
 # Print the list to check if the new elements are added
 >>> print(my_list)
-[1, 4, 2, 3, 5, 5, 1, 8, 0, 3]
+[1, 4, 2, 3, 5, 5, 1, 8, -2, 3]
 
 # Print the sorted list to check if it is sorting correctly
 >>> my_list.print_sorted()
-[0, 1, 1, 2, 3, 3, 4, 5, 5, 8]
+[-2, 1, 1, 2, 3, 3, 4, 5, 5, 8]
 
 # Check if the original list is still unmodified after sorting
 >>> print(my_list)
-[1, 4, 2, 3, 5, 5, 1, 8, 0, 3]
+[1, 4, 2, 3, 5, 5, 1, 8, -2, 3]
+
+#check if the element is a char
+>>> my_list.append(a)
+Traceback (most recent call last):
+...
+NameError: name 'a' is not defined
