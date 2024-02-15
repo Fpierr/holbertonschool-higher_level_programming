@@ -1,5 +1,8 @@
 # Python3: Mutable, Immutable... everything is an object!
 
+![1](https://github.com/Fpierr/holbertonschool-higher_level_programming/assets/141949137/8255eaab-85d7-481e-8703-f8d698bb24c0)
+
+
 ## Introduction
 
 Python's versatile nature revolves around the idea that "everything is an object." This post explores the intricacies of mutable and immutable objects, shedding light on their impact in Python programming. A solid grasp of these concepts is essential for crafting efficient and bug-free code.
