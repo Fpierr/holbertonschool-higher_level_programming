@@ -3,7 +3,6 @@
 
 
 import json
-"""import the module"""
 
 
 def to_json_string(my_obj):
