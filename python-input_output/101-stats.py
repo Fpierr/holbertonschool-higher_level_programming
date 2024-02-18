@@ -1,24 +1,22 @@
 #!/usr/bin/python3
+"""script that reads stdin line by line and computes metrics"""
+
+
 import sys
 
-
 def print_statistics(total_size, status_codes):
-    """
-    Prints the total file size and number of lines by status code.
-    """
+    """Prints the total file size and number of lines by status code."""
     print("File size: {}".format(total_size))
     for code in sorted(status_codes.keys()):
         print("{}: {}".format(code, status_codes[code]))
 
 def parse_line(line):
-    """
-    Parses a line and extracts the status code and file size.
-    Returns a tuple (status_code, file_size).
-    """
+    """Parses a line and returns a tuple (status_code, file_size)."""
     parts = line.split()
     return int(parts[-2]), int(parts[-1])
 
 def main():
+    """the main function"""
     total_size = 0
     status_codes = {}
 
