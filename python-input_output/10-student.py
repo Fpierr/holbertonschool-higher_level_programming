@@ -4,7 +4,7 @@
 
 class Student:
     """Defines a student."""
-    
+
     def __init__(self, first_name, last_name, age):
         """Instantiation with first_name, last_name, and age."""
         self.first_name = first_name
@@ -21,3 +21,8 @@ class Student:
                 if hasattr(self, attr):
                     filtered_dict[attr] = getattr(self, attr)
             return filtered_dict
+
+    def __repr__(self):
+        """Return a string representation of the object."""
+        return "Student({}, {}, {})".format(self.first_name,
+                                            self.last_name, self.age)
