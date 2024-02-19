@@ -1,5 +1,7 @@
 # Python - Almost a circle
 
+This Python project involves creating a class hierarchy with features like attribute validation, area calculation, display, JSON serialization/deserialization, and update methods. The Rectangle and Square classes inherit from the Base class. Unit tests, comprehensive documentation, and adherence to pycodestyle coding standards are also required. The goal is to grasp the implementation of advanced concepts like exceptions, class and static methods, emphasizing modularity and code robustness.
+
 ## Background Context
 In this project, you will review everything about Python:
 - Import
