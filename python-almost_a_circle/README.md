@@ -92,5 +92,4 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - We strongly encourage you to work together on test cases so that you don’t miss any edge cas
 
 ## Author :
-[Fanuel Pierre](https://www.github.com/Fpierr)e
->>>>>>> 5962a6e (update Readme)
+[Fanuel Pierre](https://www.github.com/Fpierr)
