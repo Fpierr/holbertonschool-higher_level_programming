@@ -22,12 +22,25 @@ class Rectangle(Base):
         """Calculate the area of the rectangle"""
         return self.width * self.height
 
+    def __str__(self):
+        """Return a string that representing the class rectanhle"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
+
     def display(self):
         """Print # to display the rectangle considering x and y"""
         for _ in range(self.y):
             print()
         for _ in range(self.height):
             print(" " * self.x + "#" * self.width)
+
+    def update(self, *args, **kwargs):
+        """update attribute of the rectangle instance with key"""
+        attributes = ["id", "width", "height", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, attributes[i], args[i])
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     @property
     def width(self):
@@ -83,8 +96,3 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-
-    def __str__(self):
-        """Return a string that representing the class rectanhle"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(
-            self.id, self.x, self.y, self.width, self.height)
