@@ -85,11 +85,7 @@ At the end of this project, you are expected to be able to explain to anyone, wi
 - You can also test file by file by using this command: `python3 -m unittest tests/test_models/test_base.py`
 <<<<<<< HEAD
 - We strongly encourage you to work together on test cases so that you don’t miss any edge case
-
-## Author
-[Fanuel Pierre](https://www.github.com/Fpierr)
-=======
 - We strongly encourage you to work together on test cases so that you don’t miss any edge cas
 
-## Author :
+## Author
 [Fanuel Pierre](https://www.github.com/Fpierr)
