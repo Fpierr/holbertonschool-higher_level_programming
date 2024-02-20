@@ -23,9 +23,11 @@ class Rectangle(Base):
         return self.width * self.height
 
     def display(self):
-        """Print # to display the rectangle"""
+        """Print # to display the rectangle considering x and y"""
+        for _ in range(self.y):
+            print()
         for _ in range(self.height):
-            print("#" * self.width)
+            print(" " * self.x + "#" * self.width)
 
     @property
     def width(self):
@@ -81,3 +83,8 @@ class Rectangle(Base):
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def __str__(self):
+        """Return a string that representing the class rectanhle"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height)
