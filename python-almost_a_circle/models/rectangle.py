@@ -43,6 +43,18 @@ class Rectangle(Base):
             setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        Returns a dictionary representation of the Rectangle.
+
+        Returns:
+            dict: A dictionary containing the attributes of the Rectangle.
+                Keys:
+                    - 'id' (int): The identifier of the Rectangle.
+                    - 'width' (int): The width of the Rectangle.
+                    - 'height' (int): The height of the Rectangle.
+                    - 'x' (int): The x-coordinate of the Rectangle.
+                    - 'y' (int): The y-coordinate of the Rectangle.
+        """
         return {
             'x': self.x,
             'y': self.y,
