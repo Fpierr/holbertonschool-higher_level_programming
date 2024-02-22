@@ -23,5 +23,5 @@ class Base:
         """Convert a list of dictionaries to a JSON string representation."""
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return []
-        return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries, sort_keys=True)
 
