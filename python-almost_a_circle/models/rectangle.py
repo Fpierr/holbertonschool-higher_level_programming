@@ -56,11 +56,11 @@ class Rectangle(Base):
                     - 'y' (int): The y-coordinate of the Rectangle.
         """
         return {
-            'x': self.x,
-            'y': self.y,
             'id': self.id,
-            'height': self.height,
             'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
         }
 
     @property
