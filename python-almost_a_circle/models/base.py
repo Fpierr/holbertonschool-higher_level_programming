@@ -81,7 +81,7 @@ class Base:
         except FileNotFoundError:
             return []
 
-        list_dicts = json.loads(json_str)
+        list_dicts = cls.from_json_string(json_str)
         list_instances = [cls.create(**d) for d in list_dicts]
 
         return list_instances
