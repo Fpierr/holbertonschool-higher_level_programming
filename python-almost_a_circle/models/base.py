@@ -59,7 +59,12 @@ class Base:
         """returns an instance with all attributes already set"""
 
         # create a "dummy" instance with a mandatory attributes.
-        dummy_instance = cls(1, 1, 0, 0)
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy_instance = cls(1)
+        else:
+            return None
 
         # call the update method to apply the real vallue
         dummy_instance.update(**dictionary)
