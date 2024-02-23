@@ -25,6 +25,7 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
+    @staticmethod
     def from_json_string(json_string):
         """return the list of the JSON string representation json_string"""
         if json_string is None or json_string == "":
@@ -52,3 +53,15 @@ class Base:
         # write the JSON string to the file
         with open(filename, "w") as file:
             file.write(json_str)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+
+        # create a "dummy" instance with a mandatory attributes.
+        dummy_instance = cls(1, 1)
+
+        # call the update method to apply the real vallue
+        dummy_instance.update(**dictionary)
+
+        return dummy_instance
