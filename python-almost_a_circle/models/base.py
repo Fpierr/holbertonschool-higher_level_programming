@@ -30,11 +30,11 @@ class Base:
         """Write the JSON string representation of list_objs to a file."""
         if list_objs is None:
             list_objs = []
-    
+
         # Get the class name
         class_name = cls.__name__
 
-        #create the filename
+        # create the filename
         filename = "{}.json".format(class_name)
 
         # Convert list_objs to a list of dictionaries
