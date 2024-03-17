@@ -1,6 +1,8 @@
-SQL_more_queries
+# SQL_more_queries
 
-By Fanuel
+##### By Fanuel
+
+![sql](https://github.com/Fpierr/holbertonschool-higher_level_programming/assets/141949137/4bb887b8-089b-4566-9fe8-71ecb73b32f0)
 
 # Resources
 Read or watch:
@@ -135,6 +137,8 @@ id  name
 8   Thriller
 $
 ```
+![sql2](https://github.com/Fpierr/holbertonschool-higher_level_programming/assets/141949137/3f35f3c3-ad85-4e6e-8e8c-dbe5534acb06)
+
 
 ## Author
 [Fanuel PIERRE](https://www.github.com/Fpierr)
