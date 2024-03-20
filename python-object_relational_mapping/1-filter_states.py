@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all states with a name starting with N (upper N) from DB"""
+"""Lists all states with a name starting with N (upper N) from the database"""
 
 import MySQLdb
 import sys
@@ -36,6 +36,9 @@ if __name__ == "__main__":
         # Print the results
         for row in results:
             print(row)
+
+    except MySQLdb.Error as e:
+        print("MySQL Error:", e)
 
     except Exception as e:
         print("Error:", e)
