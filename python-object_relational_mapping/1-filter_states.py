@@ -35,7 +35,7 @@ if __name__ == "__main__":
 
         # Print the results
         for row in results:
-            if ('N' in row[1]):
+            if 'N' in row[1]:
                 print(row)
 
     except Exception as e:
