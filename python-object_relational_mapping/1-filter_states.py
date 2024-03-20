@@ -35,7 +35,8 @@ if __name__ == "__main__":
 
         # Print the results
         for row in results:
-            print(row)
+            if ('N' in row[1]):
+                print(row)
 
     except MySQLdb.Error as e:
         print("MySQL Error:", e)
