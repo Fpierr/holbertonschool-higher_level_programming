@@ -4,42 +4,46 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     # Database connection parameters
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    # Connect to MySQL database
-    db = MySQLdb.connect(
-        host='localhost',
-        port=3306,
-        user=username,
-        passwd=password,
-        db=db_name,
-        charset='utf8'
-    )
+   try:
+       # Connect to MySQL database
+       db = MySQLdb.connect(
+               host='localhost',
+               port=3306,
+               user=username,
+               passwd=password,
+               db=db_name,
+               charset='utf8'
+        )
 
-    # Create a cursor object using cursor() method
-    cursor = db.cursor()
+       # Create a cursor object using cursor() method
+       cursor = db.cursor()
 
-    # Prepare SQL query to select states starting with 'N'
-    sql_query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+       # Prepare SQL query to select states starting with 'N'
+       sql_query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
 
-    try:
-        # Execute the SQL command
-        cursor.execute(sql_query)
+       # Execute the SQL command
+       cursor.execute(sql_query)
 
-        # Fetch all the rows in a list of tuples
-        results = cursor.fetchall()
+       # Fetch all the rows in a list of tuples
+       results = cursor.fetchall()
 
-        # Print the results
-        for row in results:
-            print(row)
+       # Print the results
+       for row in results:
+           print(row)
 
-    except Exception as e:
-        print("Error:", e)
+   except MySQLdb.Error as e:
+       print("MySQL Error:", e)
 
-    finally:
-        # Close the database connection
-        db.close()
+   except Exception as e:
+       print("Error:", e)
+
+   finally:
+       # Close the database connection
+       db.close()
