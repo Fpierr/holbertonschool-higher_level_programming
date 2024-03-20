@@ -38,14 +38,9 @@ if __name__ == "__main__":
             if ('N' in row[1]):
                 print(row)
 
-    except MySQLdb.Error as e:
-        print("MySQL Error:", e)
-
     except Exception as e:
         print("Error:", e)
 
     finally:
-        if db:
-            # Close the database connection and cursor
-            cursor.close()
-            db.close()
+        # Close the database connection and cursor
+        db.close()
