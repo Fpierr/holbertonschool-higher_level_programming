@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states with a name starting with N (upper N) from the database"""
+"""lists all states with a name starting with N (upper N) from the database"""
 
 import MySQLdb
 import sys
