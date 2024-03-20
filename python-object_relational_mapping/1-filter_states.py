@@ -4,7 +4,6 @@
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
     # Database connection parameters
     username = sys.argv[1]
