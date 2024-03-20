@@ -4,6 +4,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     # Database connection parameters
     username = sys.argv[1]
@@ -36,9 +37,6 @@ if __name__ == "__main__":
         # Print the results
         for row in results:
             print(row)
-
-    except MySQLdb.Error as e:
-        print("MySQL Error:", e)
 
     except Exception as e:
         print("Error:", e)
