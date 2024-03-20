@@ -42,5 +42,6 @@ if __name__ == "__main__":
         print("Error:", e)
 
     finally:
-        # Close the database connection
-        db.close()
+        if db:
+            # Close the database connection
+            db.close()
