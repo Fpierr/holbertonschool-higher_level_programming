@@ -40,4 +40,11 @@ if __name__ == "__main__":
 
         # Print the result
         for row in results:
-            print(", ".join(row[1])
+            print(", ".join(row[1]))
+
+    except Exception as e:
+        print("Error:", e)
+
+    finally:
+        # Close the database connection
+        db.close()
