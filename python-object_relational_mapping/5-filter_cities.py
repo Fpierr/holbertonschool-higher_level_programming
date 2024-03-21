@@ -27,20 +27,20 @@ if __name__ == "__main__":
 
     try:
         # Prepare SQL query to select cities of the given state
-        sql_query = "SELECT GROUP_CONCAT(name SEPARATOR ', ') FROM cities \
-                     INNER JOIN states ON cities.state_id = states.id \
-                     WHERE states.name = '{}' ORDER BY cities.id ASC".format(
-                             state_name)
-        
+        sql_query = """SELECT cities.id, cities.name
+                       FROM cities JOIN states ON cities.state_id = states.id
+                       WHERE states.name LIKE BINARY %(state_name)s
+                       ORDER BY cities.id ASC"""
+
         # Execute the SQL command
-        cursor.execute(sql_query)
+        cursor.execute(sql_query, {'state_name': state_name})
 
         # Fetch the result
-        result = cursor.fetchone()
+        results = cursor.fetchall()
 
         # Print the result
-        if result is not None:
-            print(", ".join([row[1] for row in result]))
+        for row in results:
+            print(row[1])
 
     except Exception as e:
         print("Error:", e)
