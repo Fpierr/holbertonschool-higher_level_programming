@@ -27,20 +27,19 @@ if __name__ == "__main__":
 
     try:
         # Prepare SQL query to select cities of the given state
-        sql_query = "SELECT cities.id, cities.name\
-                FROM cities JOIN states ON cities.state_id = states.id\
-                WHERE states.name LIKE BINARY %(state_name)s\
-                ORDER BY cities.id ASC"
+        sql_query = "SELECT cities.id, cities.name, states.name \
+                     FROM cities JOIN states ON cities.state_id = states.id \
+                     WHERE states.name = '{}';".format(state_name)
 
         # Execute the SQL command
-        cursor.execute(sql_query, {'state_name': state_name})
+        cursor.execute(sql_query)
 
         # Fetch the result
         results = cursor.fetchall()
 
         # Print the result
         for row in results:
-            print(", ".join(row[1]))
+            print(row[1])
 
     except Exception as e:
         print("Error:", e)
