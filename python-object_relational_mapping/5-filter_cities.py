@@ -25,8 +25,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Prepare SQL query to select cities of the given state
-    sql_query = "SELECT cities.id, cities.name, states.name\
-            FROM cities JOIN states ON cities.state_id = states.id\
+    sql_query = "SELECT cities.id, cities.name, states.name \
+            FROM cities JOIN states ON cities.state_id = states.id \
             WHERE states.name = '{}';".format(state_name)
 
     # Execute the SQL command
@@ -36,5 +36,4 @@ if __name__ == "__main__":
     results = cursor.fetchall()
 
     # Print the result
-    for row in results:
-        print(", ".join(row[1]))
+    print("{}".format(", ".join([row[1] for row in results])))
