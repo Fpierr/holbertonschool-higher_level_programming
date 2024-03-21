@@ -39,8 +39,8 @@ if __name__ == "__main__":
         result = cursor.fetchone()
 
         # Print the result
-        if result[0]:
-            print(result[0])
+        if result is not None:
+            print(", ".join([row[1] for row in result]))
 
     except Exception as e:
         print("Error:", e)
