@@ -4,7 +4,6 @@
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
     # Database connection parameters
     username = sys.argv[1]
@@ -25,25 +24,17 @@ if __name__ == "__main__":
     # Create a cursor object using cursor() method
     cursor = db.cursor()
 
-    try:
-        # Prepare SQL query to select cities of the given state
-        sql_query = "SELECT cities.id, cities.name, states.name\
-                FROM cities JOIN states ON cities.state_id = states.id\
-                WHERE states.name = '{}';".format(state_name)
+    # Prepare SQL query to select cities of the given state
+    sql_query = "SELECT cities.id, cities.name, states.name\
+            FROM cities JOIN states ON cities.state_id = states.id\
+            WHERE states.name = '{}';".format(state_name)
 
-        # Execute the SQL command
-        cursor.execute(sql_query)
+    # Execute the SQL command
+    cursor.execute(sql_query)
 
-        # Fetch the result
-        results = cursor.fetchall()
+    # Fetch the result
+    results = cursor.fetchall()
 
-        # Print the result
-        for row in results:
-            print(", ".join(row[1]))
-
-    except Exception as e:
-        print("Error:", e)
-
-    finally:
-        # Close the database connection
-        db.close()
+    # Print the result
+    for row in results:
+        print(", ".join(row[1]))
