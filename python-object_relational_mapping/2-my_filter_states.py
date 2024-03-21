@@ -26,11 +26,11 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Prepare SQL query to select states where name matches the argument
-    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    sql_query = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
 
     try:
         # Execute the SQL command with the user input as parameter
-        cursor.execute(sql_query, (state_name,))
+        cursor.execute(sql_query, (state_name + "%",))
 
         # Fetch all the rows in a list of tuples
         results = cursor.fetchall()
