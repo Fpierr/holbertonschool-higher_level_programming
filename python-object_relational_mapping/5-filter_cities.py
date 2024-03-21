@@ -29,10 +29,11 @@ if __name__ == "__main__":
         # Prepare SQL query to select cities of the given state
         sql_query = "SELECT GROUP_CONCAT(name SEPARATOR ', ') FROM cities \
                      INNER JOIN states ON cities.state_id = states.id \
-                     WHERE states.name = %s ORDER BY cities.id ASC"
+                     WHERE states.name = '{}' ORDER BY cities.id ASC".format(
+                             state_name)
         
-        # Execute the SQL command with the state name as parameter
-        cursor.execute(sql_query, (state_name,))
+        # Execute the SQL command
+        cursor.execute(sql_query)
 
         # Fetch the result
         result = cursor.fetchone()
