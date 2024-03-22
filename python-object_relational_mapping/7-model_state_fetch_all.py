@@ -8,14 +8,16 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+    """main entry point"""
+
     # Database connection
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
 
     # Create engine to the database
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
-        username, password, db_name), pool_pre_ping=True)
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+        username, password, db_name))
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
