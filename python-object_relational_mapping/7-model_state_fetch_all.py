@@ -17,7 +17,8 @@ if __name__ == "__main__":
 
     # Create engine to the database
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, db_name))
+                           .format(username, password, db_name),
+                           pool_pre_ping=True)
 
     # Create a configured "Session" class
     Session = sessionmaker(bind=engine)
@@ -26,5 +27,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects and print them
-    for state in session.query(State).order_by(State.id).all():
-        print("{0}: {1}".format(state.id, state.name))
+    states = session.query(State).order_by(State.id).all()
+
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
