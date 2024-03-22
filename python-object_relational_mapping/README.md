@@ -1,6 +1,6 @@
 ## python-object_relational_mapping
 
-#### Ny Fanuel
+#### By Fanuel
 
 ## Background Context
 In this project, you will link two amazing worlds: Databases and Python!
