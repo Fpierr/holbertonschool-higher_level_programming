@@ -26,9 +26,5 @@ if __name__ == "__main__":
     session = Session()
 
     # Query all State objects and print them
-    states = session.query(State).order_by(State.id).all()
-    for state in states:
+    for state in session.query(State).order_by(State.id).all():
         print("{0}: {1}".format(state.id, state.name))
-
-    # Close the session
-    session.close()
